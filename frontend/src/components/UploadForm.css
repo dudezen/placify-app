@@ -1,0 +1,253 @@
+.upload-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.form-header p {
+  font-size: 16px;
+  color: var(--light-text);
+  line-height: 1.6;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+}
+
+/* Upload Area */
+.upload-area {
+  position: relative;
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 40px 20px;
+  background-color: #fafaf8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.upload-area:hover {
+  border-color: var(--primary-color);
+  background-color: #f5faf7;
+}
+
+.upload-area.active {
+  border-color: var(--primary-color);
+  background-color: #e8f7f1;
+  box-shadow: 0 0 0 4px rgba(29, 158, 117, 0.1);
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 40px;
+  display: block;
+}
+
+.upload-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.upload-hint {
+  font-size: 12px;
+  color: var(--light-text);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.file-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-color);
+  word-break: break-all;
+}
+
+/* Form Textarea */
+.form-textarea {
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', sans-serif;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: white;
+  resize: vertical;
+  transition: all 0.3s ease;
+  min-height: 200px;
+  line-height: 1.6;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(29, 158, 117, 0.1);
+}
+
+.form-textarea:disabled {
+  background-color: #f5f5f3;
+  color: var(--light-text);
+  cursor: not-allowed;
+}
+
+.form-textarea::placeholder {
+  color: var(--light-text);
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--primary-color), #16805e);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(29, 158, 117, 0.3);
+  margin-top: 8px;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 158, 117, 0.4);
+  background: linear-gradient(135deg, #16805e, #0f5a44);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  background: linear-gradient(135deg, #ccc, #999);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+.submit-button span {
+  font-size: 18px;
+}
+
+/* Spinner Animation */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .upload-form-container {
+    gap: 24px;
+  }
+
+  .form-header h1 {
+    font-size: 36px;
+  }
+
+  .form-header p {
+    font-size: 14px;
+  }
+
+  .upload-area {
+    padding: 30px 16px;
+  }
+
+  .upload-icon {
+    font-size: 32px;
+  }
+
+  .upload-text {
+    font-size: 14px;
+  }
+
+  .form-textarea {
+    min-height: 150px;
+    font-size: 13px;
+  }
+
+  .submit-button {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-area {
+    padding: 24px 12px;
+  }
+
+  .form-textarea {
+    min-height: 120px;
+  }
+
+  .submit-button {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
